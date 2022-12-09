@@ -1,0 +1,45 @@
+<div class="user_main">
+  <h1>Users</h1>
+  <table mat-table [dataSource]="usersArray">
+    <ng-container *ngFor="let item of tableColumn" [matColumnDef]="item">
+      <th mat-header-cell *matHeaderCellDef>{{ item }}</th>
+      <td mat-cell *matCellDef="let element">
+        <span *ngIf="item == 'Name'">
+          {{ element.name }}
+        </span>
+        <span *ngIf="item == 'Mobile'">
+          {{ element.mobile }}
+        </span>
+        <span *ngIf="item == 'Email'">
+          {{ element.email }}
+        </span>
+        <span *ngIf="item == 'Negative'">
+          {{ element.negpoints }}
+        </span>
+        <span *ngIf="item == 'Actions'">
+          <mat-chip-list>
+            <mat-chip *ngIf="element.status == '1'" class="common_enabled">
+              Enabled</mat-chip
+            >
+            <mat-chip *ngIf="element.status == '0'" class="common_disabled"
+              >Disabled</mat-chip
+            >
+          </mat-chip-list>
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="tableColumn"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumn"></tr>
+  </table>
+  <mat-paginator
+    (page)="getData($event)"
+    [pageSizeOptions]="[5, 10, 20, 50, 100]"
+    [length]="totalLength"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    [showFirstLastButtons]="true"
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>

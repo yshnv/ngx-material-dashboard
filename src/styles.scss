@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.common_enabled {
+  background-color: #fafbfa !important;
+  color: green !important;
+  border: 1px solid green !important;
+  min-height: 26px !important;
+  font-size: 13px !important;
+}
+.common_disabled {
+  background-color: #fafbfa !important;
+  color: red !important;
+  border: 1px solid red !important;
+  min-height: 26px !important;
+  font-size: 13px !important;
+}

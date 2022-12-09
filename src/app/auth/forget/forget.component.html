@@ -1,0 +1,36 @@
+<div class="signin-content animated fadeIn">
+  <mat-card>
+    <mat-card-content>
+      <img src="assets/img/login.svg" width="200px" />
+      <form [formGroup]="forgetForm" (ngSubmit)="Send()">
+        <mat-form-field class="full-width-input" appearance="outline">
+          <input
+            matInput
+            type="email"
+            placeholder="Email Id"
+            formControlName="email"
+            required
+          />
+          <mat-error
+            *ngIf="getemail?.hasError && (getemail?.dirty || getemail?.touched)"
+          >
+            Please enter a valid username or email
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          style="width: 100%"
+          [disabled]="forgetForm.invalid"
+        >
+          Send
+          <!-- <div *ngIf="isLogin; else loginText">Loading ...</div> -->
+        </button>
+      </form>
+
+      <!-- <ng-template> Login </ng-template> -->
+    </mat-card-content>
+  </mat-card>
+</div>

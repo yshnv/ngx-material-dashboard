@@ -1,0 +1,14 @@
+<h1 mat-dialog-title style="margin-bottom: 8px">Logout</h1>
+<div mat-dialog-content>Are you sure you want to log out ?</div>
+<div style="display: flex; justify-content: flex-end; align-items: center">
+  <button
+    mat-stroked-button
+    style="margin-right: 10px"
+    (click)="logoutClick('NO')"
+  >
+    No
+  </button>
+  <button mat-stroked-button color="primary" (click)="logoutClick('YES')">
+    Yes
+  </button>
+</div>
